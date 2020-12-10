@@ -457,7 +457,7 @@ void set_option(int opt, ...);
 ### Parameters
 
 *opt*<br/>
-The opt value, see [YOPT_X_XXX](#YOPT_X_XXX).
+The opt value, see [YOPT_X_XXX](io_service-options.md).
 
 ### Example
 
@@ -489,7 +489,5 @@ int main(){
     return 0;
 }
 ```
-
-The opt value, see [YOPT_X_XXX](#YOPT_X_XXX).
 
 ## See also

@@ -19,7 +19,7 @@ Implements network adopt binary stream writer.
 Implements network adopt binary stream reader.
 
 [xxsocket](reference/cpp/xxsocket-class.md)<br/>
-Wrapper posix socket api for all platforms.
+Implements cross-platform socket class based on posix socket api.
 
 ## lua
 

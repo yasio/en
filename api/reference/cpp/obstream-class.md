@@ -91,7 +91,7 @@ TODO:
 
 ## <a name="write_ix"></a> obstream::write_ix
 
-Write 7Bit Encoded Int value.
+Write 7Bit Encoded Int compressed value.
 
 ```cpp
 template<typename _Intty>
@@ -104,10 +104,15 @@ void obstream::write_ix(_Intty value);
 The value to be written.
 
 ### Remarks
-The type *_Nty* of value must be one of follows
+The type *_Intty* of value must be one of follows
 
 - int32_t
 - int64_t
+
+This function behavior is compatible with dotnet
+
+- [BinaryWriter.Write7BitEncodedInt](https://docs.microsoft.com/en-us/dotnet/api/system.io.binarywriter.write7bitencodedint?view=net-5.0#System_IO_BinaryWriter_Write7BitEncodedInt_System_Int32_)
+- [BinaryWriter.Write7BitEncodedInt64](https://docs.microsoft.com/en-us/dotnet/api/system.io.binarywriter.write7bitencodedint64?view=net-5.0#System_IO_BinaryWriter_Write7BitEncodedInt64_System_Int64_)
 
 ### Example
 

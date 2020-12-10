@@ -83,7 +83,7 @@ _Nty ibstream_view::read();
 
 ### Return Value
 
-Returns the value to read.
+Returns the value to be read.
 
 ### Remarks
 The type *_Nty* of value should be one of follows
@@ -101,7 +101,7 @@ TODO:
 
 ## <a name="read_ix"></a> ibstream_view::read_ix
 
-Read 7Bit Encoded Int value.
+Read 7Bit Encoded Int compressed value.
 
 ```cpp
 template<typename _Intty>
@@ -110,13 +110,18 @@ _Intty ibstream_view::read_ix();
 
 ### Return Value
 
-Returns the value to read.
+Returns the value to be read.
 
 ### Remarks
 The type *_Intty* of value must be one of follows
 
 - int32_t
 - int64_t
+
+This function behavior is compatible with dotnet
+
+- [BinaryReader.Read7BitEncodedInt()](https://docs.microsoft.com/en-us/dotnet/api/system.io.binaryreader.read7bitencodedint?view=net-5.0#System_IO_BinaryReader_Read7BitEncodedInt)
+- [BinaryReader.Read7BitEncodedInt64()](https://docs.microsoft.com/en-us/dotnet/api/system.io.binaryreader.read7bitencodedint64?view=net-5.0#System_IO_BinaryReader_Read7BitEncodedInt64)
 
 ### Example
 
@@ -132,7 +137,7 @@ cxx17::string_view read_v();
 
 ### Return Value
 
-Returns the blob view to read.
+Returns the blob view to be read
 
 ### Remarks
 This function will read length field with 7Bit Encoded first, then call [read_bytes](#read_bytes) to read the value.
@@ -143,7 +148,7 @@ TODO:
 
 ## <a name="read_byte"></a> ibstream_view::read_byte
 
-Read 1 byte to stream.
+Read 1 byte from stream.
 
 ```cpp
 uint8_t read_byte();
@@ -151,7 +156,7 @@ uint8_t read_byte();
 
 ### Return Value
 
-Returns the value to read.
+Returns the value to be read.
 
 ### Remarks
 This function is identical to [ibstream_view::read<uint8_t>](#read)

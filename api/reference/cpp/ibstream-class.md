@@ -35,8 +35,7 @@ namespace yasio { class ibstream_view; }
 |[ibstream_view::empty](#empty)|Check is stream empty.|
 |[ibstream_view::data](#data)|Retrieves stream data pointer.|
 |[ibstream_view::length](#length)|Retrieves size of stream.|
-|[ibstream_view::seek](#seek)|Tries to alter the current positions for the controlled streams.|
-|[ibstream_view::save](#save)|Save the stream binary data to file.|
+|[ibstream_view::seek](#seek)|Moves the read position in a stream.|
 
 ## Remarks
 
@@ -224,6 +223,31 @@ size_t length() const;
 ### Return Value
 
 The current length of the stream.
+
+### Example
+
+TODO:
+
+## <a name="seek"></a> ibstream_view::seek
+
+Returns the number of bytes in the stream.
+
+```cpp
+ptrdiff_t seek(ptrdiff_t offset, int whence);
+```
+
+### Parameters
+
+*offset*\
+An offset to move the read pointer relative to *whence*.
+
+*whence*\
+One of the `SEEK_SET`,`SEEK_CUR`,`SEEK_END` enumerations.
+
+
+### Return Value
+
+The current read poistion of the stream after seek.
 
 ### Example
 

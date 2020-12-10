@@ -48,7 +48,7 @@ By default, the transport use object_pool.
 
 **Header:** yasio.hpp
 
-## <a name="io_service"></a> obstream::io_service
+## <a name="io_service"></a> io_service::io_service
 
 Constructs a `io_service` object.
 

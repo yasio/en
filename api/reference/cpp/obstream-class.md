@@ -1,6 +1,6 @@
 ---
 title: "yasio::obstream Class"
-ms.date: "12/10/2020"
+date: "12/10/2020"
 f1_keywords: ["obstream", "yasio/obstream", ]
 helpviewer_keywords: []
 ---
@@ -277,7 +277,7 @@ The internal implementation buffer of the stream.
 ### Example
 
 ```cpp
-// obstream_save.cpp
+// obstream_buffer.cpp
 // compile with: /EHsc
 #include "yasio/obstream.hpp"
 
@@ -293,6 +293,8 @@ int main( )
 
    // after this line, the obs will be empty
    auto move_buffer = std::move(obs.buffer());
+
+   return 0;
 }
 ```
 
@@ -328,8 +330,16 @@ int main( )
    ibstream ibs;
    if(ibs.load("obstream_save.bin")) {
        // output should be: hello world!
-       std::count << ibs.read_v() << "\n";
+       try {
+           std::count << ibs.read_v() << "\n";
+       }
+       catch(const std::exception& ex) {
+           std::count << "read_v fail: " <<
+               << ex.message() << "\n";
+       }
    }
+
+   return 0;
 }
 ```
 

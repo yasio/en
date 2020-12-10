@@ -32,8 +32,8 @@ namespace yasio { namespace inet { class io_service; } }
 |[io_service::close](#close)|Close transport.|
 |[io_service::is_open](#is_open)|Tests whether channel or transport is open.|
 |[io_service::dispatch](#dispatch)|Dispatch the network io events.|
-|[io_service::write](#write)|Retrieves size of stream.|
-|[io_service::write_to](#write_to)|Retrieves the buffer object of the stream.|
+|[io_service::write](#write)|Async send data.|
+|[io_service::write_to](#write_to)|Async send to data.|
 |[io_service::schedule](#schedule)|Save the stream binary data to file.|
 |[io_service::init_globals](#init_globals)|Init global data with print function callback.|
 |[io_service::cleanup_globals](#cleanup_globals)|Cleanup the global print function callback.|
@@ -286,7 +286,7 @@ The empty buffer will be ignored and not trigger completion_handler.
 
 TODO:
 
-## <a name="write"></a> io_service::write
+## <a name="write_to"></a> io_service::write_to
 
 Sends data asynchronous.
 

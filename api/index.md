@@ -7,7 +7,7 @@ helpviewer_keywords: ["yasio core classes"]
 
 The yasio core implementation Classes
 
-## cpp
+## C++
 
 [io_service](reference/cpp/io_service-class.md)<br/>
 Implements yasio core netwrok service.
@@ -21,7 +21,7 @@ Implements network adopt binary stream reader.
 [xxsocket](reference/cpp/xxsocket-class.md)<br/>
 Implements cross-platform socket class based on posix socket api.
 
-## lua
+## Lua
 
 [io_service](reference/lua/io_service-class.md)<br/>
 Implements yasio core netwrok service.

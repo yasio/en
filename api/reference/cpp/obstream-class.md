@@ -11,7 +11,7 @@ Provides the functionality of Binary Writer.
 ## Syntax
 
 ```cpp
-class obstream
+namespace yasio { class obstream; }
 ```
 
 ## Members
@@ -75,10 +75,6 @@ void obstream::write(_Nty value);
 *value*<br/>
 The value to be written.
 
-### Return Value
-
-NA.
-
 ### Remarks
 The type *_Nty* of value should be one of follows
 
@@ -107,10 +103,6 @@ void obstream::write_ix(_Intty value);
 *value*<br/>
 The value to be written.
 
-### Return Value
-
-NA.
-
 ### Remarks
 The type *_Nty* of value must be one of follows
 
@@ -134,10 +126,6 @@ void write_v(cxx17::string_view sv);
 *sv*<br/>
 The string_view value to be written.
 
-### Return Value
-
-NA.
-
 ### Remarks
 This function will write length field with 7Bit Encoded first, then call [write_bytes](#write_bytes) to write the value.
 
@@ -158,12 +146,8 @@ void write_byte(uint8_t value);
 *value*<br/>
 The value to be written.
 
-### Return Value
-
-NA.
-
 ### Remarks
-This function is identical with [obstream::write<uint8_t>](#write)
+This function is identical to [obstream::write<uint8_t>](#write)
 
 ### Example
 
@@ -194,10 +178,6 @@ The length data to be written.
 
 *offset*<br/>
 The offset of stream to be written.
-
-### Return Value
-
-NA.
 
 ### Remarks
 The value of `offset + length` must be less of [`obstream::length`](#length)
@@ -305,10 +285,6 @@ Save the stream data to file.
 ```cpp
 void save(const char* filename) const;
 ```
-
-### Return Value
-
-NA.
 
 ### Example
 

@@ -43,7 +43,7 @@ This class is inspired from C++17 std::string_view, it never copy any buffer dur
 
 ## Requirements
 
-**Header:** ibstream_view.hpp
+**Header:** ibstream.hpp
 
 ## <a name="ibstream_view"></a> ibstream_view::ibstream_view
 

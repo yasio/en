@@ -33,7 +33,7 @@ namespace yasio { class obstream; }
 |[obstream::write_bytes](#write_bytes)|Write blob data without length field.|
 |[obstream::empty](#empty)|Check is stream empty.|
 |[obstream::data](#data)|Retrieves stream data pointer.|
-|[obstream::length](#getidealsize)|Retrieves size of stream.|
+|[obstream::length](#length)|Retrieves size of stream.|
 |[obstream::buffer](#buffer)|Retrieves the buffer object of the stream.|
 |[obstream::save](#save)|Save the stream binary data to file.|
 

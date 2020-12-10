@@ -35,7 +35,6 @@ class obstream
 |[obstream::data](#data)|Retrieves stream data pointer.|
 |[obstream::length](#getidealsize)|Retrieves size of stream.|
 |[obstream::buffer](#buffer)|Retrieves the buffer object of the stream.|
-|[obstream::wptr](#wptr)|Retrieves the writable pointer of stream.|
 |[obstream::save](#save)|Save the stream binary data to file.|
 
 ## Remarks
@@ -50,8 +49,12 @@ When write int16~int64 and float/double, will auto convert host byte order to ne
 
 Constructs a `obstream` object.
 
-```
+```cpp
 obstream(size_t capacity = 128);
+
+obstream(const obstream& rhs);
+
+obstream(obstream&& rhs);
 ```
 
 ### Example
@@ -95,8 +98,8 @@ TODO:
 Write 7Bit Encoded Int value.
 
 ```cpp
-template<typename _Nty>
-void obstream::write_ix(_Nty value);
+template<typename _Intty>
+void obstream::write_ix(_Intty value);
 ```
 
 ### Parameters
@@ -118,60 +121,216 @@ The type *_Nty* of value must be one of follows
 
 TODO:
 
-## <a name="create"></a> CButton::Create
+## <a name="write_v"></a> obstream::write_v
 
-Creates the Windows button control and attaches it to the `CButton` object.
+Write blob data with 7Bit Encoded Int length field.
 
 ```cpp
-virtual BOOL Create(
-    LPCTSTR lpszCaption,
-    DWORD dwStyle,
-    const RECT& rect,
-    CWnd* pParentWnd,
-    UINT nID);
+void write_v(cxx17::string_view sv);
 ```
 
 ### Parameters
 
-*lpszCaption*<br/>
-Specifies the button control's text.
-
-*dwStyle*<br/>
-Specifies the button control's style. Apply any combination of [button styles](../../mfc/reference/styles-used-by-mfc.md#button-styles) to the button.
-
-*rect*<br/>
-Specifies the button control's size and position. It can be either a `CRect` object or a `RECT` structure.
-
-*pParentWnd*<br/>
-Specifies the button control's parent window, usually a `CDialog`. It must not be NULL.
-
-*nID*<br/>
-Specifies the button control's ID.
+*sv*<br/>
+The string_view value to be written.
 
 ### Return Value
 
-Nonzero if successful; otherwise 0.
+NA.
 
 ### Remarks
-
-You construct a `CButton` object in two steps. First, call the constructor and then call `Create`, which creates the Windows button control and attaches it to the `CButton` object.
-
-If the WS_VISIBLE style is given, Windows sends the button control all the messages required to activate and show the button.
-
-Apply the following [window styles](../../mfc/reference/styles-used-by-mfc.md#window-styles) to a button control:
-
-- WS_CHILD Always
-
-- WS_VISIBLE Usually
-
-- WS_DISABLED Rarely
-
-- WS_GROUP To group controls
-
-- WS_TABSTOP To include the button in the tabbing order
+This function will write length field with 7Bit Encoded first, then call [write_bytes](#write_bytes) to write the value.
 
 ### Example
 
-[!code-cpp[NVC_MFC_CButton#2](../../mfc/reference/codesnippet/cpp/cbutton-class_2.cpp)]
+TODO:
+
+## <a name="write_byte"></a> obstream::write_byte
+
+Write 1 byte to stream.
+
+```cpp
+void write_byte(uint8_t value);
+```
+
+### Parameters
+
+*value*<br/>
+The value to be written.
+
+### Return Value
+
+NA.
+
+### Remarks
+This function is identical with [obstream::write<uint8_t>](#write)
+
+### Example
+
+TODO:
+
+## <a name="write_bytes"></a> obstream::write_bytes
+
+Write byte array to stream.
+
+```cpp
+void write_bytes(cxx17::string_view sv);
+
+void write_bytes(const void* data, int length);
+
+void write_bytes(std::streamoff offset, const void* data, int length);
+```
+
+### Parameters
+
+*sv*<br/>
+The string_view value to be written.
+
+*data*<br/>
+The data to be written.
+
+*length*<br/>
+The length data to be written.
+
+*offset*<br/>
+The offset of stream to be written.
+
+### Return Value
+
+NA.
+
+### Remarks
+The value of `offset + length` must be less of [`obstream::length`](#length)
+
+### Example
+
+TODO:
+
+## <a name="empty"></a> obstream::empty
+
+Tests whether the obstream is empty.
+
+```cpp
+bool empty() const;
+```
+
+### Return Value
+
+`true` if the obstream empty; `false` if it has at least one byte.
+
+### Remarks
+
+The member function is equivalent to [length](#length) == 0.
+
+### Example
+
+TODO:
+
+## <a name="data"></a> obstream::data
+
+Retrieves stream data pointer.
+
+```cpp
+const char* data() const;
+
+char* data();
+```
+
+### Return Value
+
+A pointer to the first byte in the stream.
+
+### Example
+
+TODO:
+
+## <a name="length"></a> obstream::length
+
+Returns the number of bytes in the stream.
+
+```cpp
+size_t length() const;
+```
+
+### Return Value
+
+The current length of the stream.
+
+### Example
+
+TODO:
+
+## <a name="buffer"></a> obstream::buffer
+
+Retrieves internal buffer of stream.
+
+```cpp
+const std::vector<char>& buffer() const;
+
+std::vector<char>& buffer();
+```
+
+### Return Value
+
+The internal implementation buffer of the stream.
+
+### Example
+
+```cpp
+// obstream_save.cpp
+// compile with: /EHsc
+#include "yasio/obstream.hpp"
+
+int main( )
+{
+   using namespace yasio;
+   using namespace cxx17;
+   
+   obstream obs;
+   obs.write_v("hello world!");
+   
+   const auto& const_buffer = obs.buffer();
+
+   // after this line, the obs will be empty
+   auto move_buffer = std::move(obs.buffer());
+}
+```
+
+## <a name="save"></a> obstream::save
+
+Save the stream data to file.
+
+```cpp
+void save(const char* filename) const;
+```
+
+### Return Value
+
+NA.
+
+### Example
+
+```cpp
+// obstream_save.cpp
+// compile with: /EHsc
+#include "yasio/obstream.hpp"
+#include "yasio/ibstream.hpp"
+
+int main( )
+{
+   using namespace yasio;
+   using namespace cxx17;
+   
+   obstream obs;
+   obs.write_v("hello world!");
+   obs.save("obstream_save.bin");
+
+   ibstream ibs;
+   if(ibs.load("obstream_save.bin")) {
+       // output should be: hello world!
+       std::count << ibs.read_v() << "\n";
+   }
+}
+```
 
 ## See also

@@ -6,7 +6,7 @@ helpviewer_keywords: []
 ---
 # io_service Class
 
-Provides the functionality of `tcp, udp, kcp and ssl` client communication with noblocking-io model.
+Provides the functionality of `tcp, udp, kcp and ssl-client`  communication with noblocking-io model.
 
 ## Syntax
 
@@ -32,8 +32,8 @@ namespace yasio { namespace inet { class io_service; } }
 |[io_service::close](#close)|Close transport.|
 |[io_service::is_open](#is_open)|Tests whether channel or transport is open.|
 |[io_service::dispatch](#dispatch)|Dispatch the network io events.|
-|[io_service::write](#write)|Async send data.|
-|[io_service::write_to](#write_to)|Async send to data.|
+|[io_service::write](#write)|Sends data asynchronous.|
+|[io_service::write_to](#write_to)|Sends data to specific remote asynchronous.|
 |[io_service::schedule](#schedule)|Save the stream binary data to file.|
 |[io_service::init_globals](#init_globals)|Init global data with print function callback.|
 |[io_service::cleanup_globals](#cleanup_globals)|Cleanup the global print function callback.|
@@ -94,7 +94,7 @@ int main() {
 
 ## <a name="start"></a> io_service::start
 
-Start the network service thred.
+Start the network service thread.
 
 ```cpp
 void start(io_event_cb_t cb);
@@ -315,9 +315,11 @@ The completion handler for send operation.
 
 ### Return Value
 
-A number of bytes to sends, error occured when < 0.
+A number of bytes to be send, error occured when < 0.
 
 ### Remarks
+
+This function only works for *DGRAM* transport `udp,kcp`
 
 The *completion_handler* not support KCP.
 
@@ -348,7 +350,7 @@ The callback the execute when the timer is expired.
 
 ### Return Value
 
-The shared_ptr of the high resuliton timer.
+The shared_ptr of the high resolution timer.
 
 ### Example
 
@@ -448,7 +450,7 @@ The channel pointer, will be `nullptr` if the index out-of-range.
 
 ## <a name="set_option"></a> io_service::set_option
 
-Retrieves channel by index.
+Set current io_service option.
 
 ```cpp
 void set_option(int opt, ...);
@@ -491,3 +493,7 @@ int main(){
 ```
 
 ## See also
+[io_service Options](./io_service-options.md)
+[xxsocket Class](./xxsocket-class.md)
+[obstream Class](./obstream-class.md)
+[ibstream Class](./ibstream-class.md)

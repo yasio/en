@@ -185,7 +185,7 @@ The length data to be written.
 The offset of stream to be written.
 
 ### Remarks
-The value of `offset + length` must be less of [`obstream::length`](#length)
+The value of `offset + length` must be less than [`obstream::length`](#length)
 
 ### Example
 
@@ -325,3 +325,5 @@ int main( )
 ```
 
 ## See also
+
+[ibstream Class](./ibstream-class.md)

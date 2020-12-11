@@ -29,8 +29,8 @@ namespace yasio { class ibstream_view; }
 |[ibstream_view::reset](#reset)|Reset input data, weak reference.|
 |[ibstream_view::read](#read)|Function template, read number value.|
 |[ibstream_view:read_ix](#read_ix)|Function template,read **7bit Encoded Int/Int64**.|
-|[ibstream_view:read_v](#read_v)|read blob data with **7bit Encoded Int/Int64 lenght field**.|
-|[ibstream_view:read_byte](#read_byte)|read 1 byte.|
+|[ibstream_view:read_v](#read_v)|Read blob data with **7bit Encoded Int/Int64 lenght field**.|
+|[ibstream_view:read_byte](#read_byte)|Read 1 byte.|
 |[ibstream_view:read_bytes](read_bytes)|Read blob data without length field.|
 |[ibstream_view::empty](#empty)|Check is stream empty.|
 |[ibstream_view::data](#data)|Retrieves stream data pointer.|
@@ -60,7 +60,7 @@ ibstream_view(const obstream* obs);
 ### Parameters
 
 *data*<br/>
-The first pointer of byte buffer.
+The pointer to first byte of buffer.
 
 *size*<br/>
 The size of data.
@@ -235,7 +235,7 @@ TODO:
 
 ## <a name="seek"></a> ibstream_view::seek
 
-Returns the number of bytes in the stream.
+Moves the read position in a stream.
 
 ```cpp
 ptrdiff_t seek(ptrdiff_t offset, int whence);
@@ -274,7 +274,7 @@ namespace yasio { class ibstream; }
 
 |Name|Description|
 |----------|-----------------|
-|[ibstream::ibstream](#ibstream_view)|Constructs a `ibstream` object.|
+|[ibstream::ibstream](#ibstream)|Constructs a `ibstream` object.|
 
 ### Public Methods
 
@@ -286,6 +286,28 @@ namespace yasio { class ibstream; }
 [ibstream_view](#ibstream_view)
 
 `ibstream`
+
+## <a name="ibstream"></a> ibstream::ibstream
+
+Constructs a `ibstream` object.
+
+```cpp
+ibstream(std::vector<char> blob);
+
+ibstream(const obstream* obs);
+```
+
+### Parameters
+
+*blob*<br/>
+The input binary buffer.
+
+*obs*<br/>
+The obstream object.
+
+### Example
+
+TODO:
 
 ## <a name="load"></a> obstream::load
 
@@ -304,3 +326,6 @@ bool load(const char* filename) const;
 See: [obstream::save](obstream-class.md#save)
 
 ## See also
+
+[obstream Class](./obstream-class.md)
+[io_service Class](./io_service-class.md)

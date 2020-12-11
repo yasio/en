@@ -500,4 +500,6 @@ int main(){
 
 [obstream Class](./obstream-class.md)
 
-[ibstream Class](./ibstream-class.md)
+[ibstream_view Class](./ibstream-class.md)
+
+[ibstream Class](./ibstream-class.md#ibstream-class)

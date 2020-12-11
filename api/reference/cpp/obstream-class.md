@@ -326,4 +326,6 @@ int main( )
 
 ## See also
 
-[ibstream Class](./ibstream-class.md)
+[ibstream_view Class](./ibstream-class.md)
+
+[ibstream Class](./ibstream-class.md#ibstream-class)

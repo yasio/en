@@ -280,7 +280,7 @@ namespace yasio { class ibstream; }
 
 |Name|Description|
 |----------|-----------------|
-|[ibstream::load](#reset)|Load stream from file.|
+|[ibstream::load](#load)|Load stream from file.|
 
 ### Inheritance Hierarchy
 [ibstream_view](#ibstream_view)

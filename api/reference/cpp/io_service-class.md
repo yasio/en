@@ -1,6 +1,6 @@
 ---
 title: "yasio::inet::io_service Class"
-date: "12/10/2020"
+date: "12/11/2020"
 f1_keywords: ["io_service", "yasio/io_service", ]
 helpviewer_keywords: []
 ---
@@ -485,8 +485,9 @@ int main(){
                         0 // lengthAdjustment：if the value of length feild == sizeof(packet.header), this parameter should be 0, otherwise should be sizeof(packet.header)
     );
 
-    // for no length field application protocol, just sets length field size to -1.
-    // then io_service will dispatch packet as is, no unpack behavior
+    // for application protocol without length field, just sets length field size to -1.
+    // then io_service will dispatch any packet received from server immediately,
+    // such as http request, this is default behavior of channel.
     service->set_option(YOPT_C_LFBFD_PARAMS, 1, 65535, -1, 0, 0);
     return 0;
 }

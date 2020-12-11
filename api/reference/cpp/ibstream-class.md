@@ -309,7 +309,7 @@ The obstream object.
 
 TODO:
 
-## <a name="load"></a> obstream::load
+## <a name="load"></a> ibstream::load
 
 Load the stream data from file.
 

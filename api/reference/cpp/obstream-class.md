@@ -11,7 +11,12 @@ Provides the functionality of Binary Writer.
 ## Syntax
 
 ```cpp
-namespace yasio { class obstream; }
+namespace yasio { 
+using obstream = basic_obstream<endian::network_convert_tag>;
+
+// The fast binary writer without byte order convertion.
+using fast_obstream = basic_obstream<endian::host_convert_tag>;
+}
 ```
 
 ## Members

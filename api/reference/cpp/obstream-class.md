@@ -81,7 +81,7 @@ void obstream::write(_Nty value);
 The value to be written.
 
 ### Remarks
-The type *_Nty* of value could be any (1~8bytes) number types 
+The type *_Nty* of value could be any (1~8bytes) integral or float types 
 
 ### Example
 

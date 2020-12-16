@@ -10,7 +10,7 @@ The following are the io_service options.
 
 |Name|Description|
 |----------|-----------------|
-|*YOPT_S_DEFERRED_EVENT*|Set with deferred dispatch event, default is: 1<br/>params: deferred_event:int(1)|
+|*YOPT_S_DEFER_EVENT*|Set whether defer dispatch event, default is: 1<br/>params: defer_event:int(1)|
 |*YOPT_S_RESOLV_FN*|Set custom resolve function, native C++ ONLY<br/>params: func:resolv_fn_t*|
 |*YOPT_S_PRINT_FN*|Set custom print function native C++ ONLY<br/>parmas: func:print_fn_t<br/>remarks: you must ensure thread safe of it|
 |*YOPT_S_PRINT_FN2*|Set custom print function with log level<br/>parmas: func:print_fn2_t<br/>you must ensure thread safe of it|

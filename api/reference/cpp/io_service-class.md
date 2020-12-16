@@ -477,12 +477,19 @@ int main(){
 
     // for application protocol with length field, you just needs set this option.
     // it's similar to java netty length frame based decode.
+    // such as when your protocol define as following
+    //    packet.header: (header.len=12bytes)
+    //           code:int16_t
+    //           datalen:int32_t (not contains packet.header.len)
+    //           timestamp:int32_t
+    //           crc16:int16_t
+    //    packet.data
     service->set_option(YOPT_C_LFBFD_PARAMS,
                         0,     // channelIndex, the channel index
                         65535, // maxFrameLength, max packet size
-                        0,     // lenghtFieldOffset, the offset of length field
-                        4, // lengthFieldLength, the size of length field, can be 1,2,4
-                        0 // lengthAdjustment：if the value of length feild == sizeof(packet.header), this parameter should be 0, otherwise should be sizeof(packet.header)
+                        2,     // lenghtFieldOffset, the offset of length field
+                        4,     // lengthFieldLength, the size of length field, can be 1,2,4
+                        12,    // lengthAdjustment：if the value of length feild == packet.header.len + packet.data.len, this parameter should be 0, otherwise should be sizeof(packet.header)
     );
 
     // for application protocol without length field, just sets length field size to -1.

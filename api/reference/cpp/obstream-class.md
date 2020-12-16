@@ -1,6 +1,6 @@
 ---
 title: "yasio::obstream Class"
-date: "12/10/2020"
+date: "16/10/2020"
 f1_keywords: ["obstream", "yasio/obstream", ]
 helpviewer_keywords: []
 ---
@@ -81,14 +81,7 @@ void obstream::write(_Nty value);
 The value to be written.
 
 ### Remarks
-The type *_Nty* of value should be one of follows
-
-- int8_t
-- int16_t
-- int32_t
-- int64_t
-- float
-- double
+The type *_Nty* of value could be any (1~8bytes) number types 
 
 ### Example
 

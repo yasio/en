@@ -86,14 +86,7 @@ _Nty ibstream_view::read();
 Returns the value to be read.
 
 ### Remarks
-The type *_Nty* of value should be one of follows
-
-- int8_t
-- int16_t
-- int32_t
-- int64_t
-- float
-- double
+The type *_Nty* of value could be any (1~8bytes) integral or float types.
 
 ### Example
 

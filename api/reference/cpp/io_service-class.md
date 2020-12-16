@@ -473,7 +473,7 @@ int main(){
     {"192.168.1.66", 20336},
     {"192.168.1.88", 20337},
     };
-    io_service* service = new io_service(hosts, YASIO_ARRAYSIZE(hosts));
+    auto service = std::make_shared<io_service>(hosts, YASIO_ARRAYSIZE(hosts));
 
     // for application protocol with length field, you just needs set this option.
     // it's similar to java netty length frame based decode.

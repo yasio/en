@@ -1,7 +1,7 @@
 ---
 Description: The following are the io_service options.
 title: io_service options
-date: 12/10/2020
+date: 12/17/2020
 ---
 
 # io_service options
@@ -10,6 +10,7 @@ The following are the io_service options.
 
 |Name|Description|
 |----------|-----------------|
+|*YOPT_S_DEFER_EVENT_CB*|Set defer event callback<br/>params: callback:defer_event_cb_t<br/>a. User can do custom packet resolve at network thread, such as decompress and crc check.<br/>b. Return true, io_service will continue enque to event queue.<br/>c. Return false, io_service will drop the event.|
 |*YOPT_S_DEFERRED_EVENT*|Set whether deferred dispatch event, default is: 1<br/>params: deferred_event:int(1)|
 |*YOPT_S_RESOLV_FN*|Set custom resolve function, native C++ ONLY<br/>params: func:resolv_fn_t*|
 |*YOPT_S_PRINT_FN*|Set custom print function native C++ ONLY<br/>parmas: func:print_fn_t<br/>remarks: you must ensure thread safe of it|

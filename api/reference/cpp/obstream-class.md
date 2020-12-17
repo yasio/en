@@ -33,7 +33,7 @@ using fast_obstream = basic_obstream<endian::host_convert_tag>;
 |----------|-----------------|
 |[obstream::write](#write)|Function template, write number value.|
 |[obstream::write_ix](#write_ix)|Function template, write **7bit Encoded Int/Int64**.|
-|[obstream::write_v](#write_v)|Write blob data with **7bit Encoded Int/Int64 lenght field**.|
+|[obstream::write_v](#write_v)|Write blob data with **7bit Encoded Int lenght field**.|
 |[obstream::write_byte](#write_byte)|Write 1 byte.|
 |[obstream::write_bytes](#write_bytes)|Write blob data without length field.|
 |[obstream::empty](#empty)|Check is stream empty.|

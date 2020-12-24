@@ -11,7 +11,10 @@ Provides the functionality of Binary Reader.
 ## Syntax
 
 ```cpp
-namespace yasio { class ibstream_view; }
+namespace yasio { 
+using ibstream_view = basic_ibstream_view<endian::network_convert_tag>; 
+using fast_ibstream_view = basic_ibstream_view<endian::host_convert_tag>;
+}
 ```
 
 ## Members
@@ -258,7 +261,10 @@ Provides the functionality of Binary Reader with buffer storage.
 ## Syntax
 
 ```cpp
-namespace yasio { class ibstream; }
+namespace yasio { 
+using ibstream = basic_ibstream<endian::network_convert_tag>; 
+using fast_ibstream = basic_ibstream<endian::host_convert_tag>; 
+}
 ```
 
 ## Members

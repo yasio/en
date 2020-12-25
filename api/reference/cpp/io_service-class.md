@@ -346,7 +346,7 @@ highp_timer_ptr schedule(
 The timer expire duration.
 
 *cb*<br/>
-The callback the execute when the timer is expired.
+The callback to execute when the timer is expired.
 
 ### Return Value
 

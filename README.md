@@ -1,7 +1,7 @@
 # docs-437
+This is the yasio official English documentation sources repo, build with [docfx](https://dotnet.github.io/docfx)
 
-## xlua pitfalls
-
-- At macOS, the file `xlua.bundle` needs change attr by command `sudo xattr -r -d com.apple.quarantine xlua.bundle`
-
-## [yaiso core Classes](api/index.md)
+## Install docfx
+- Download `docfx.zip` from  https://github.com/dotnet/docfx/releases
+- Unzip to anywhere
+- Add the docfx.exe folder to PATH

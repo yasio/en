@@ -34,7 +34,7 @@ using fast_ibstream_view = basic_ibstream_view<endian::host_convert_tag>;
 |[ibstream_view:read_ix](#read_ix)|Function template,read **7bit Encoded Int/Int64**.|
 |[ibstream_view:read_v](#read_v)|Read blob data with **7bit Encoded Int/Int64 lenght field**.|
 |[ibstream_view:read_byte](#read_byte)|Read 1 byte.|
-|[ibstream_view:read_bytes](read_bytes)|Read blob data without length field.|
+|[ibstream_view:read_bytes](#read_bytes)|Read blob data without length field.|
 |[ibstream_view::empty](#empty)|Check is stream empty.|
 |[ibstream_view::data](#data)|Retrieves stream data pointer.|
 |[ibstream_view::length](#length)|Retrieves size of stream.|
@@ -74,6 +74,22 @@ The obstream object.
 ### Example
 
 TODO:
+
+## <a name="reset"></a> ibstream_view::reset
+
+Resets `ibstream_view` input buffer view.
+
+```cpp
+void ibstream_view::reset(const void* data, size_t size);
+```
+
+### Parameters
+
+*data*<br/>
+The pointer to first byte of buffer.
+
+*size*<br/>
+The size of data.
 
 ## <a name="read"></a> ibstream_view::read
 

@@ -11,6 +11,15 @@ nav:
   - API References: api/index.md
   - FAQ: faq.md
 markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - toc:
+      permalink: true
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.betterem:

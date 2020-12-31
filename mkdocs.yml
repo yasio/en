@@ -1,5 +1,9 @@
-site_name: yasio Documentation
 docs_dir: docs
+site_name: yasio Documentation
+repo_url: https://github.com/yasio/docs-437
+repo_name: default
+edit_uri: default
+copyright: Copyright &copy; 2012 - 2021 yasio.org.
 theme:
   name: material
   palette:

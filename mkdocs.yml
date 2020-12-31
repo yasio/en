@@ -10,7 +10,6 @@ nav:
   - Home: index.md
   - API References: api/index.md
   - FAQ: faq.md
-# Extensions
 markdown_extensions:
   - pymdownx.arithmatex:
       generic: true

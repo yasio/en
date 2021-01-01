@@ -164,7 +164,8 @@ For tcp, will start a non-blocking 3 times handshake to establish tcp connection
 
 The *cindex* value must be less than max channels supported by this io_service.
 
-The *kind* must be follow values  
+The *kind* must be follow values
+
 - `YCK_TCP_CLIENT`
 - `YCK_TCP_SERVER`
 - `YCK_UDP_CLIENT`

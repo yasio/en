@@ -4,25 +4,38 @@
 
 *yasio is a multi-platform support c++11 library with focus on asio (asynchronous socket I/O) for any client application, support windows & linux & apple & android & win10-universal.*
 
-* [yasio GitHub](https://github.com/yasio/yasio)
-* yasio Documentation
+- [yasio GitHub](https://github.com/yasio/yasio)
+- yasio Documentation
   - [English](https://docs.yasio.org/en/latest/)
   - [简体中文](https://docs.yasio.org/zh_CN/latest/)
 
-* Cross-platform:
-  * Compiler: 
+- Cross-platform:
+  - Compiler: 
     - Visual Studio 2013+
     - GCC4.7+
     - xcode9+
     - Other C++11,14,17 Compilers
 
-  * Architecture: x86, x64, ARM and etc.
-  * OS: Windows, macOS, Linux, FreeBSD, iOS, Android And etc.
+  - Architecture: x86, x64, ARM and etc.
+  - OS: Windows, macOS, Linux, FreeBSD, iOS, Android And etc.
+
+=== "Material for MkDocs"
+
+    ```
+    pip install mkdocs-material
+    ```
+
+=== "Insiders"
+
+    ``` sh
+    pip install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git
+    ```
 
 ## Test case
 This demo simply send http request to ``tool.chinaz.com`` and print resposne data.
 
 === "C++"
+
 ```cpp
 
   #include "yasio/yasio.hpp"
@@ -76,6 +89,7 @@ This demo simply send http request to ``tool.chinaz.com`` and print resposne dat
 ```
 
 === "Lua"
+
 ```lua
   local ip138 = "tool.chinaz.com"
   local service = yasio.io_service.new({host=ip138, port=80})

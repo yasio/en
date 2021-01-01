@@ -72,7 +72,7 @@ This demo simply send http request to ``tool.chinaz.com`` and print resposne dat
         service.open(0, YCK_TCP_CLIENT);
         getchar();
     }
-```
+    ```
 
 === "Lua"
 

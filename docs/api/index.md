@@ -7,15 +7,15 @@ helpviewer_keywords: ["yasio core classes"]
 
 The yasio core implementation Classes<br/>
 
-[io_service](reference/cpp/io_service-class.md)<br/>
+[io_service](reference/io_service-class.md)<br/>
 Implements yasio core netwrok service.
 
-[obstream](reference/cpp/obstream-class.md)<br/>
+[obstream](reference/obstream-class.md)<br/>
 Implements network adopt binary stream writer.
 
-[ibstream](reference/cpp/ibstream-class.md)<br/>
+[ibstream](reference/ibstream-class.md)<br/>
 Implements network adopt binary stream reader.
 
-[xxsocket](reference/cpp/xxsocket-class.md)<br/>
+[xxsocket](reference/xxsocket-class.md)<br/>
 Implements cross-platform socket class based on posix socket api.
 

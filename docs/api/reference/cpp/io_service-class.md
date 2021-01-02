@@ -28,7 +28,7 @@ namespace yasio { namespace inet { class io_service; } }
 |----------|-----------------|
 |[io_service::start](#start)|Start the network service thread.|
 |[io_service::stop](#stop)|Stop the network service thread.|
-|[io_service::open](#open)|Write blob data without length field.|
+|[io_service::open](#open)|Open channel.|
 |[io_service::close](#close)|Close transport.|
 |[io_service::is_open](#is_open)|Tests whether channel or transport is open.|
 |[io_service::dispatch](#dispatch)|Dispatch the network io events.|

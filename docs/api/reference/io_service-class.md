@@ -503,6 +503,10 @@ int main(){
 
 ## See also
 
+[io_event Class](./io_event-class.md)
+
+[io_channel Class](./io_channel-class.md)
+
 [io_service Options](./io_service-options.md)
 
 [xxsocket Class](./xxsocket-class.md)

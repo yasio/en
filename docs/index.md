@@ -7,8 +7,8 @@
 *yasio is a multi-platform support c++11 library with focus on asio (asynchronous socket I/O) for any client application, support windows & linux & apple & android & win10-universal.*
 
 - Languages:
-    - [English](en/latest/)
-    - [简体中文](zh_CN/latest/)
+    - [English](../../en/latest/)
+    - [简体中文](../../zh_CN/latest/)
 - Cross-platform:
     - Compiler: 
         - Visual Studio 2013+

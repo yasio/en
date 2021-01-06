@@ -48,9 +48,9 @@ namespace yasio { namespace inet { class xxsocket; } }
 |[xxsocket::send](#send)|Send data on the socket.|
 |[xxsocket::send_n](#send_n)|Send data on the socket non-blocking.|
 |[xxsocket::recv](#recv)|Receive data from the socket.|
-|[xxsocket:recv_n](#recv_n)|Receive data from the socket non-blocking.|
-|[xxsocket:sendto](#sendto)|Send data to a DGRAM socket.|
-|[xxsocket:recvfrom](#recvfrom)|Send data to a DGRAM socket non-blocking.|
+|[xxsocket::recv_n](#recv_n)|Receive data from the socket non-blocking.|
+|[xxsocket::sendto](#sendto)|Send data to a DGRAM socket.|
+|[xxsocket::recvfrom](#recvfrom)|Send data to a DGRAM socket non-blocking.|
 |[xxsocket::handle_write_ready](#handle_write_ready)|Wait socket ready to write.|
 |[xxsocket::handle_read_ready](#handle_read_ready)|Wait socket ready to read.|
 |[xxsocket::local_endpoint](#local_endpoint)|Gets local endpoint of socket.|
@@ -60,10 +60,10 @@ namespace yasio { namespace inet { class xxsocket; } }
 |[xxsocket::exclusive_address](#exclusive_address)|Sets socket exclusive address.|
 |[xxsocket::select](#select)|Select event ready for socket.|
 |[xxsocket::shutdown](#shutdown)|Shutdown socket.|
-|[xxsocket:close](#close)|Close socket.|
-|[xxsocket:tcp_rtt](#tcp_rtt)|Gets tcp socket rtt.|
-|[xxsocket:get_last_errno](#get_last_errno)|Gets last socket error.|
-|[xxsocket:set_last_errno](#set_last_errno)|Sets last socket error.|
+|[xxsocket::close](#close)|Close socket.|
+|[xxsocket::tcp_rtt](#tcp_rtt)|Gets tcp socket rtt.|
+|[xxsocket::get_last_errno](#get_last_errno)|Gets last socket error.|
+|[xxsocket::set_last_errno](#set_last_errno)|Sets last socket error.|
 |[xxsocket::strerror](#strerror)|Translate socket error code to string.|
 |[xxsocket::gai_strerror](#gai_strerror)|Translate getaddrinfo error code to string.|
 |[xxsocket::resolve](#resolve)|Resolve domain.|

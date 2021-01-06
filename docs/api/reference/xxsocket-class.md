@@ -59,7 +59,6 @@ namespace yasio { namespace inet { class xxsocket; } }
 |[xxsocket::reuse_address](#reuse_address)|Sets socket reuse address.|
 |[xxsocket::exclusive_address](#exclusive_address)|Sets socket exclusive address.|
 |[xxsocket::select](#select)|Select event ready for socket.|
-|[xxsocket::alive](#alive)|Check whether socket status is ok.|
 |[xxsocket::shutdown](#shutdown)|Shutdown socket.|
 |[xxsocket:close](#close)|Close socket.|
 |[xxsocket:tcp_rtt](#tcp_rtt)|Gets tcp socket rtt.|

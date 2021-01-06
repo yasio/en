@@ -132,7 +132,7 @@ This demo simply send http request to ``tool.chinaz.com`` and print resposne dat
 ## Build tests & examples
 * Ensure install compiler which support C++11, such as ``msvc``, ``gcc``, ``clang``
 * Ensure ``git``, ``cmake`` installed
-* Execude follow commands:
+* Execute follow commands:
 
 ```sh
   git clone https://github.com/yasio/yasio

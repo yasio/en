@@ -113,7 +113,7 @@ This demo simply send http request to ``tool.chinaz.com`` and print resposne dat
     _G.yservice = service -- Store service to global table as a singleton instance
     ```
 
-## The [tests](https://github.com/yasio/yasio/tree/master/tests) & [examples](https://github.com/yasio/yasio/tree/master/tests):
+## The [tests](https://github.com/yasio/yasio/tree/master/tests) & [examples](https://github.com/yasio/yasio/tree/master/tests)
 
 * tests:
     * [echo_server](https://github.com/yasio/yasio/tree/master/tests/echo_server): TCP/UDP/KCP echo server

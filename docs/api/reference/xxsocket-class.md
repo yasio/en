@@ -29,13 +29,13 @@ namespace yasio { namespace inet { class xxsocket; } }
 |[xxsocket::xpconnect_n](#xpconnect_n)|Connect remote via tcp non-blocking.|
 |[xxsocket::pconnect](#pconnect)|Connect remote via tcp.|
 |[xxsocket::pconnect_n](#pconnect_n)|Connect remote via tcp non-blocking.|
-|[xxsocket::pserv](#pserv)|Create socket as tcp server.|
+|[xxsocket::pserve](#pserve)|Create socket as tcp server.|
 |[xxsocket::swap](#swap)|Swap socket handle.|
 |[xxsocket::open](#open)|Open a socket.|
 |[xxsocket::reopen](#reopen)|Reopen a socket.|
 |[xxsocket::is_open](#is_open)|Check whether socket opened.|
 |[xxsocket::native_handle](#native_handle)|Gets socket handle.|
-|[xxsocket::release_handle](#detach)|Release socket handle.|
+|[xxsocket::release_handle](#detach)|Release ownership of socket handle.|
 |[xxsocket::set_nonblocking](#set_nonblocking)|Sets socket non-blocking mode.|
 |[xxsocket::test_nonblocking](#test_nonblocking)|Test whether socket is non-blocking mode.|
 |[xxsocket::bind](#bind)|Bind socket with specific address.|

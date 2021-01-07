@@ -35,7 +35,7 @@ namespace yasio { namespace inet { class xxsocket; } }
 |[xxsocket::reopen](#reopen)|Reopen a socket.|
 |[xxsocket::is_open](#is_open)|Check whether socket opened.|
 |[xxsocket::native_handle](#native_handle)|Gets socket handle.|
-|[xxsocket::detach](#detach)|Detach socket handle.|
+|[xxsocket::release_handle](#detach)|Release socket handle.|
 |[xxsocket::set_nonblocking](#set_nonblocking)|Sets socket non-blocking mode.|
 |[xxsocket::test_nonblocking](#test_nonblocking)|Test whether socket is non-blocking mode.|
 |[xxsocket::bind](#bind)|Bind socket with specific address.|

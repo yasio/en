@@ -27,7 +27,7 @@ namespace yasio { namespace inet { class io_channel; } }
 ## Remarks
 
 Once io_service initialized, the max count of channel can't be changed. <br/>
-Retrieves through io_service::cindex_to_handle.
+Retrieves through `io_service::channel_at`.
 
 
 ## <a name="get_service"></a> io_channel::get_service

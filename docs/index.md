@@ -143,7 +143,3 @@ This demo simply send http request to ``tool.chinaz.com`` and print resposne dat
   cmake ..
   cmake --build . --config Debug
 ```
-
-## API documentation
-* [API References](api/index.md)
-* [FAQ](faq.md)

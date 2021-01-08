@@ -160,7 +160,7 @@ The kind of channel.
 
 ### Remarks
 
-For tcp, will start a non-blocking 3 times handshake to establish tcp connection.
+For tcp, will start the non-blocking 3 times handshake to establish tcp connection.
 
 The *cindex* value must be less than max channels supported by this io_service.
 

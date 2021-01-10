@@ -40,7 +40,7 @@ int kind() const;
 
 ### Return value
 
-Retrun the kind value, can be follow values
+Return the kind value, can be follow values
 
 * `YEK_PACKET`: Packet event
 * `YEK_CONNECT_RESPONSE`: Connect response event
@@ -67,9 +67,9 @@ Gets packet of event.
 std::vector<char>& packet()
 ```
 
-## Retrun value
+## Return value
 
-Retrun the mutable reference to packet of event, user can use std::move to move it.
+Return the mutable reference to packet of event, user can use std::move to move it.
 
 ## <a name="timestamp"></a> io_event::timestamp
 

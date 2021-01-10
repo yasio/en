@@ -2,7 +2,7 @@
 
 This is the yasio official English documentation sources repo, build with [mkdocs](https://www.mkdocs.org/)
 
-* site: https://docs.yasio.org/en/latest (The domain name will expire on 2021.3.1)
+* site: https://yasio.org/en/latest
 * mirror site: http://docs.simdsoft.com:3003/yasio/en
 
 ## Install mkdocs with mkdocs-material

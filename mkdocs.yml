@@ -1,11 +1,13 @@
 docs_dir: docs
-site_name: yasio Documentation
+site_name: yasio
 repo_url: https://github.com/yasio/docs-437
 repo_name: GitHub
 edit_uri: edit/master/docs
 copyright: Copyright &copy; 2012 - 2021 yasio.org.
 theme:
   name: material
+  logo: assets/images/logo.png
+  favicon: assets/images/logo.png
 nav:
   - Home: index.md
   - API References:

@@ -17,7 +17,7 @@ nav:
     - obstream Class: api/reference/obstream-class.md
     - ibstream Class: api/reference/ibstream-class.md
     - xxsocket Class: api/reference/xxsocket-class.md
-    - io_service Class: api/reference/io_service-options.md
+    - io_service Options: api/reference/io_service-options.md
   - Preprocessor: preprocessor.md
   - FAQ: faq.md
 markdown_extensions:

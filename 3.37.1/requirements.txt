@@ -1,5 +1,0 @@
-sphinx>=3.2.1
-mkdocs>=1.1.2
-pymdown-extensions>=8.1
-mkdocs-material>=6.2.3
-mike>=1.0.0

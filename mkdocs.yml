@@ -54,6 +54,12 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+plugins:
+  - search:
+      lang:
+        - en
+        - ja
+      separator: '[\s\-\，\。]+'
 extra:
   alternate:
     # Switch to Chinese Simplfied

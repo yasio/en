@@ -40,7 +40,7 @@ This demo simply send http request to ``tool.chinaz.com`` and print resposne dat
             case YEK_ON_OPEN:
                 if (ev->status() == 0)
                 {
-                auto transport = ev->transport();
+                    auto transport = ev->transport();
                     if (ev->cindex() == 0)
                     {
                         obstream obs;

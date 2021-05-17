@@ -54,3 +54,16 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+extra:
+  alternate:
+    # Switch to Chinese Simplfied
+    - name: 简体中文
+      link: https://yasio.github.io/yasio/
+      lang: zh
+
+    # Switch to English
+    - name: English
+      link: https://yasio.github.io/en/
+      lang: en
+  version:
+    provider: mike

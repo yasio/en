@@ -41,21 +41,21 @@ This demo simply send http request to ``tool.chinaz.com`` and print resposne dat
                 if (ev->status() == 0)
                 {
                 auto transport = ev->transport();
-                if (ev->cindex() == 0)
-                {
-                    obstream obs;
-                    obs.write_bytes("GET /index.htm HTTP/1.1\r\n");
+                    if (ev->cindex() == 0)
+                    {
+                        obstream obs;
+                        obs.write_bytes("GET /index.htm HTTP/1.1\r\n");
 
-                    obs.write_bytes("Host: tool.chinaz.com\r\n");
+                        obs.write_bytes("Host: tool.chinaz.com\r\n");
 
-                    obs.write_bytes("User-Agent: Mozilla/5.0 (Windows NT 10.0; "
-                                    "WOW64) AppleWebKit/537.36 (KHTML, like Gecko) "
-                                    "Chrome/87.0.4820.88 Safari/537.36\r\n");
-                    obs.write_bytes("Accept: */*;q=0.8\r\n");
-                    obs.write_bytes("Connection: Close\r\n\r\n");
+                        obs.write_bytes("User-Agent: Mozilla/5.0 (Windows NT 10.0; "
+                                        "WOW64) AppleWebKit/537.36 (KHTML, like Gecko) "
+                                        "Chrome/87.0.4820.88 Safari/537.36\r\n");
+                        obs.write_bytes("Accept: */*;q=0.8\r\n");
+                        obs.write_bytes("Connection: Close\r\n\r\n");
 
-                    service.write(transport, std::move(obs.buffer()));
-                }
+                        service.write(transport, std::move(obs.buffer()));
+                    }
                 }
                 break;
             case YEK_ON_CLOSE:

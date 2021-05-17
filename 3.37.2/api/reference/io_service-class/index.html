@@ -1,0 +1,1910 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
+    
+    
+      
+        <title>yasio::inet::io_service Class - yasio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#io_service-class" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="yasio" class="md-header__button md-logo" aria-label="yasio" data-md-component="logo">
+      
+  <img src="../../../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            yasio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              yasio::inet::io_service Class
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="https://yasio.github.io/yasio/" hreflang="zh" class="md-select__link">
+                    简体中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="https://yasio.github.io/en/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/yasio/docs-437/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="yasio" class="md-nav__button md-logo" aria-label="yasio" data-md-component="logo">
+      
+  <img src="../../../assets/images/logo.png" alt="logo">
+
+    </a>
+    yasio
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/yasio/docs-437/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        API References
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="API References" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          API References
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          io_service Class
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        io_service Class
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#members" class="md-nav__link">
+    Members
+  </a>
+  
+    <nav class="md-nav" aria-label="Members">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#public-constructors" class="md-nav__link">
+    Public Constructors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-methods" class="md-nav__link">
+    Public Methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remarks" class="md-nav__link">
+    Remarks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_serviceio_service" class="md-nav__link">
+     io_service::io_service
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::io_service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_servicestart" class="md-nav__link">
+     io_service::start
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_servicestop" class="md-nav__link">
+     io_service::stop
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::stop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remarks_1" class="md-nav__link">
+    Remarks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_2" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_serviceopen" class="md-nav__link">
+     io_service::open
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::open">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remarks_2" class="md-nav__link">
+    Remarks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_3" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_serviceclose" class="md-nav__link">
+     io_service::close
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::close">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remarks_3" class="md-nav__link">
+    Remarks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_4" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_serviceis_open" class="md-nav__link">
+     io_service::is_open
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::is_open">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_5" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_servicedispatch" class="md-nav__link">
+     io_service::dispatch
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::dispatch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remarks_4" class="md-nav__link">
+    Remarks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_6" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_servicewrite" class="md-nav__link">
+     io_service::write
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::write">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_6" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-value" class="md-nav__link">
+    Return Value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remarks_5" class="md-nav__link">
+    Remarks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_7" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_servicewrite_to" class="md-nav__link">
+     io_service::write_to
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::write_to">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_7" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-value_1" class="md-nav__link">
+    Return Value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remarks_6" class="md-nav__link">
+    Remarks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_8" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_serviceschedule" class="md-nav__link">
+     io_service::schedule
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::schedule">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_8" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-value_2" class="md-nav__link">
+    Return Value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_9" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_serviceinit_globals" class="md-nav__link">
+     io_service::init_globals
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::init_globals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_9" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remarks_7" class="md-nav__link">
+    Remarks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_10" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_servicecleanup_globals" class="md-nav__link">
+     io_service::cleanup_globals
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::cleanup_globals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remarks_8" class="md-nav__link">
+    Remarks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_servicechannel_at" class="md-nav__link">
+     io_service::channel_at
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::channel_at">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_10" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-value_3" class="md-nav__link">
+    Return value
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_serviceset_option" class="md-nav__link">
+     io_service::set_option
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::set_option">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_11" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_11" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../io_channel-class/" class="md-nav__link">
+        io_channel Class
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../io_event-class/" class="md-nav__link">
+        io_event Class
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../obstream-class/" class="md-nav__link">
+        obstream Class
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ibstream-class/" class="md-nav__link">
+        ibstream Class
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxsocket-class/" class="md-nav__link">
+        xxsocket Class
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../io_service-options/" class="md-nav__link">
+        io_service Options
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../preprocessor/" class="md-nav__link">
+        Preprocessor
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#members" class="md-nav__link">
+    Members
+  </a>
+  
+    <nav class="md-nav" aria-label="Members">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#public-constructors" class="md-nav__link">
+    Public Constructors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-methods" class="md-nav__link">
+    Public Methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remarks" class="md-nav__link">
+    Remarks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_serviceio_service" class="md-nav__link">
+     io_service::io_service
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::io_service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_servicestart" class="md-nav__link">
+     io_service::start
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_servicestop" class="md-nav__link">
+     io_service::stop
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::stop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remarks_1" class="md-nav__link">
+    Remarks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_2" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_serviceopen" class="md-nav__link">
+     io_service::open
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::open">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remarks_2" class="md-nav__link">
+    Remarks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_3" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_serviceclose" class="md-nav__link">
+     io_service::close
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::close">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remarks_3" class="md-nav__link">
+    Remarks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_4" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_serviceis_open" class="md-nav__link">
+     io_service::is_open
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::is_open">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_5" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_servicedispatch" class="md-nav__link">
+     io_service::dispatch
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::dispatch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remarks_4" class="md-nav__link">
+    Remarks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_6" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_servicewrite" class="md-nav__link">
+     io_service::write
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::write">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_6" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-value" class="md-nav__link">
+    Return Value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remarks_5" class="md-nav__link">
+    Remarks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_7" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_servicewrite_to" class="md-nav__link">
+     io_service::write_to
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::write_to">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_7" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-value_1" class="md-nav__link">
+    Return Value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remarks_6" class="md-nav__link">
+    Remarks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_8" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_serviceschedule" class="md-nav__link">
+     io_service::schedule
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::schedule">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_8" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-value_2" class="md-nav__link">
+    Return Value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_9" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_serviceinit_globals" class="md-nav__link">
+     io_service::init_globals
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::init_globals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_9" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remarks_7" class="md-nav__link">
+    Remarks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_10" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_servicecleanup_globals" class="md-nav__link">
+     io_service::cleanup_globals
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::cleanup_globals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remarks_8" class="md-nav__link">
+    Remarks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_servicechannel_at" class="md-nav__link">
+     io_service::channel_at
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::channel_at">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_10" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-value_3" class="md-nav__link">
+    Return value
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_serviceset_option" class="md-nav__link">
+     io_service::set_option
+  </a>
+  
+    <nav class="md-nav" aria-label=" io_service::set_option">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_11" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_11" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/yasio/docs-437/edit/master/docs/api/reference/io_service-class.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="io_service-class">io_service Class<a class="headerlink" href="#io_service-class" title="Permanent link">&para;</a></h1>
+<p>Provides the functionality of <code>tcp, udp, kcp and ssl-client</code>  communication with noblocking-io model.</p>
+<h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span> <span class="nn">yasio</span> <span class="p">{</span> <span class="k">namespace</span> <span class="nn">inet</span> <span class="p">{</span> <span class="k">class</span> <span class="nc">io_service</span><span class="p">;</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre></div>
+<h2 id="members">Members<a class="headerlink" href="#members" title="Permanent link">&para;</a></h2>
+<h3 id="public-constructors">Public Constructors<a class="headerlink" href="#public-constructors" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#io_service">io_service::io_service</a></td>
+<td>Constructs a <code>io_service</code> object.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="public-methods">Public Methods<a class="headerlink" href="#public-methods" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#start">io_service::start</a></td>
+<td>Start the network service thread.</td>
+</tr>
+<tr>
+<td><a href="#stop">io_service::stop</a></td>
+<td>Stop the network service thread.</td>
+</tr>
+<tr>
+<td><a href="#open">io_service::open</a></td>
+<td>Open channel.</td>
+</tr>
+<tr>
+<td><a href="#close">io_service::close</a></td>
+<td>Close transport.</td>
+</tr>
+<tr>
+<td><a href="#is_open">io_service::is_open</a></td>
+<td>Tests whether channel or transport is open.</td>
+</tr>
+<tr>
+<td><a href="#dispatch">io_service::dispatch</a></td>
+<td>Dispatch the network io events.</td>
+</tr>
+<tr>
+<td><a href="#write">io_service::write</a></td>
+<td>Sends data asynchronous.</td>
+</tr>
+<tr>
+<td><a href="#write_to">io_service::write_to</a></td>
+<td>Sends data to specific remote asynchronous.</td>
+</tr>
+<tr>
+<td><a href="#schedule">io_service::schedule</a></td>
+<td>Save the stream binary data to file.</td>
+</tr>
+<tr>
+<td><a href="#init_globals">io_service::init_globals</a></td>
+<td>Init global data with print function callback.</td>
+</tr>
+<tr>
+<td><a href="#cleanup_globals">io_service::cleanup_globals</a></td>
+<td>Cleanup the global print function callback.</td>
+</tr>
+<tr>
+<td><a href="#channel_at">io_service::channel_at</a></td>
+<td>Retrieves the channel by index.</td>
+</tr>
+<tr>
+<td><a href="#set_option">io_service::set_option</a></td>
+<td>Set options.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="remarks">Remarks<a class="headerlink" href="#remarks" title="Permanent link">&para;</a></h2>
+<p>By default, the transport use object_pool.</p>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
+<p><strong>Header:</strong> yasio.hpp</p>
+<h2 id="io_serviceio_service"><a name="io_service"></a> io_service::io_service<a class="headerlink" href="#io_serviceio_service" title="Permanent link">&para;</a></h2>
+<p>Constructs a <code>io_service</code> object.</p>
+<div class="highlight"><pre><span></span><code><span class="n">io_service</span><span class="o">::</span><span class="n">io_service</span><span class="p">();</span>
+
+<span class="n">io_service</span><span class="o">::</span><span class="n">io_service</span><span class="p">(</span><span class="kt">int</span> <span class="n">channel_count</span><span class="p">);</span>
+
+<span class="n">io_service</span><span class="o">::</span><span class="n">io_service</span><span class="p">(</span><span class="k">const</span> <span class="n">io_hostent</span><span class="o">&amp;</span> <span class="n">channel_ep</span><span class="p">);</span>
+
+<span class="n">io_service</span><span class="o">::</span><span class="n">io_service</span><span class="p">(</span><span class="k">const</span> <span class="n">io_hostent</span><span class="o">*</span> <span class="n">channel_eps</span><span class="p">,</span> <span class="kt">int</span> <span class="n">channel_count</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
+<p><em>channel_count</em><br/>
+The channel count.</p>
+<p><em>channel_ep</em><br/>
+The channel endpoint.</p>
+<p><em>channel_eps</em><br/>
+The first pointer of channel endpoints.</p>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&quot;yasio/yasio.hpp&quot;</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">using</span> <span class="k">namespace</span> <span class="nn">yasio</span><span class="p">;</span>
+    <span class="k">using</span> <span class="k">namespace</span> <span class="nn">yasio</span><span class="o">::</span><span class="nn">inet</span><span class="p">;</span>
+    <span class="n">io_service</span> <span class="n">s1</span><span class="p">;</span> <span class="c1">// s1 only support 1 channel</span>
+    <span class="n">io_service</span> <span class="nf">s2</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span> <span class="c1">// s2 support 5 channels concurrency</span>
+    <span class="n">io_service</span> <span class="nf">s3</span><span class="p">(</span><span class="n">io_hostent</span><span class="p">{</span><span class="s">&quot;github.com&quot;</span><span class="p">,</span> <span class="mi">443</span><span class="p">});</span> <span class="c1">// s3 support 1 channel</span>
+    <span class="n">io_hostent</span> <span class="n">hosts</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>  
+        <span class="p">{</span><span class="s">&quot;192.168.1.66&quot;</span><span class="p">,</span> <span class="mi">20336</span><span class="p">},</span>
+        <span class="p">{</span><span class="s">&quot;192.168.1.88&quot;</span><span class="p">,</span> <span class="mi">20337</span><span class="p">},</span>
+    <span class="p">};</span>
+    <span class="n">io_service</span> <span class="nf">s4</span><span class="p">(</span><span class="n">hosts</span><span class="p">,</span> <span class="n">YASIO_ARRAYSIZE</span><span class="p">(</span><span class="n">hosts</span><span class="p">));</span> <span class="c1">// s4 support 2 channels concurrency</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="io_servicestart"><a name="start"></a> io_service::start<a class="headerlink" href="#io_servicestart" title="Permanent link">&para;</a></h2>
+<p>Start the network service thread.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">start</span><span class="p">(</span><span class="n">io_event_cb_t</span> <span class="n">cb</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h3>
+<p><em>cb</em><br/>
+The callback to receive network io events.</p>
+<h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&quot;yasio/yasio.hpp&quot;</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">using</span> <span class="k">namespace</span> <span class="nn">yasio</span><span class="p">;</span>
+    <span class="k">using</span> <span class="k">namespace</span> <span class="nn">yasio</span><span class="o">::</span><span class="nn">inet</span><span class="p">;</span>
+    <span class="k">auto</span> <span class="n">service</span> <span class="o">=</span> <span class="n">yasio_shared_service</span><span class="p">(</span><span class="n">io_hostent</span><span class="p">{</span><span class="n">host</span><span class="o">=</span><span class="s">&quot;ip138.com&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">80</span><span class="p">});</span>
+    <span class="n">service</span><span class="o">-&gt;</span><span class="n">start</span><span class="p">([](</span><span class="n">event_ptr</span><span class="o">&amp;&amp;</span> <span class="n">ev</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">auto</span> <span class="n">kind</span> <span class="o">=</span> <span class="n">ev</span><span class="o">-&gt;</span><span class="n">kind</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">kind</span> <span class="o">==</span> <span class="n">YEK_CONNECT_RESPONSE</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">ev</span><span class="o">-&gt;</span><span class="n">status</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%d] connect succeed.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">ev</span><span class="o">-&gt;</span><span class="n">cindex</span><span class="p">());</span>
+        <span class="k">else</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%d] connect failed!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">ev</span><span class="o">-&gt;</span><span class="n">cindex</span><span class="p">());</span>
+    <span class="p">}</span>
+    <span class="p">});</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="io_servicestop"><a name="stop"></a> io_service::stop<a class="headerlink" href="#io_servicestop" title="Permanent link">&para;</a></h2>
+<p>Stop network service thread.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">stop</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="remarks_1">Remarks<a class="headerlink" href="#remarks_1" title="Permanent link">&para;</a></h3>
+<p>If the network service thread running, this function will post exit signal and wait it exit properly.</p>
+<h3 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h3>
+<p>TODO:</p>
+<h2 id="io_serviceopen"><a name="open"></a> io_service::open<a class="headerlink" href="#io_serviceopen" title="Permanent link">&para;</a></h2>
+<p>Open a channel.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">open</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">cindex</span><span class="p">,</span> <span class="kt">int</span> <span class="n">kind</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h3>
+<p><em>cindex</em><br/>
+The index of channel.</p>
+<p><em>kind</em><br/>
+The kind of channel.</p>
+<h3 id="remarks_2">Remarks<a class="headerlink" href="#remarks_2" title="Permanent link">&para;</a></h3>
+<p>For tcp, will start the non-blocking 3 times handshake to establish tcp connection.</p>
+<p>The <em>cindex</em> value must be less than max channels supported by this io_service.</p>
+<p>The <em>kind</em> must be follow values</p>
+<ul>
+<li><code>YCK_TCP_CLIENT</code></li>
+<li><code>YCK_TCP_SERVER</code></li>
+<li><code>YCK_UDP_CLIENT</code></li>
+<li><code>YCK_UDP_SERVER</code></li>
+<li><code>YCK_KCP_CLIENT</code></li>
+<li><code>YCK_KCP_SERVER</code></li>
+<li><code>YCK_SSL_CLIENT</code></li>
+</ul>
+<h3 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h3>
+<p>TODO:</p>
+<h2 id="io_serviceclose"><a name="close"></a> io_service::close<a class="headerlink" href="#io_serviceclose" title="Permanent link">&para;</a></h2>
+<p>Close the channel or transport.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">close</span><span class="p">(</span><span class="n">transport_handle_t</span> <span class="n">transport</span><span class="p">);</span>
+
+<span class="kt">void</span> <span class="nf">close</span><span class="p">(</span><span class="kt">int</span> <span class="n">cindex</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h3>
+<p><em>transport</em><br/>
+The transport to be close.</p>
+<p><em>cindex</em><br/>
+The channel index to be close.</p>
+<h3 id="remarks_3">Remarks<a class="headerlink" href="#remarks_3" title="Permanent link">&para;</a></h3>
+<p>For tcp, will trigger 4 times handsake to terminate the connection.</p>
+<h3 id="example_4">Example<a class="headerlink" href="#example_4" title="Permanent link">&para;</a></h3>
+<p>TODO:</p>
+<h2 id="io_serviceis_open"><a name="is_open"></a> io_service::is_open<a class="headerlink" href="#io_serviceis_open" title="Permanent link">&para;</a></h2>
+<p>Tests whether the transport or channel is open.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span> <span class="nf">is_open</span><span class="p">(</span><span class="n">transport_handle_t</span> <span class="n">transport</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+
+<span class="kt">bool</span> <span class="nf">is_open</span><span class="p">(</span><span class="kt">int</span> <span class="n">cindex</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h3>
+<p><em>transport</em><br/>
+The transport to be tests.</p>
+<p><em>cindex</em><br/>
+The index of channel to be tests.</p>
+<h3 id="example_5">Example<a class="headerlink" href="#example_5" title="Permanent link">&para;</a></h3>
+<p>TODO:</p>
+<h2 id="io_servicedispatch"><a name="dispatch"></a> io_service::dispatch<a class="headerlink" href="#io_servicedispatch" title="Permanent link">&para;</a></h2>
+<p>Consume network events queue and dispatch them.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dispatch</span><span class="p">(</span><span class="kt">int</span> <span class="n">max_count</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h3>
+<p><em>max_count</em><br/>
+The max count allow to dispatch at this time.</p>
+<h3 id="remarks_4">Remarks<a class="headerlink" href="#remarks_4" title="Permanent link">&para;</a></h3>
+<p>Usually, this function should call at logic thread, such as cocos2d-x render thread or other game engine main thread.</p>
+<p>It's useful to update game ui safety.</p>
+<h3 id="example_6">Example<a class="headerlink" href="#example_6" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">yasio_shared_service</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">dispatch</span><span class="p">(</span><span class="mi">128</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="io_servicewrite"><a name="write"></a> io_service::write<a class="headerlink" href="#io_servicewrite" title="Permanent link">&para;</a></h2>
+<p>Sends data asynchronous.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">write</span><span class="p">(</span>
+    <span class="n">transport_handle_t</span> <span class="n">thandle</span><span class="p">,</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">buffer</span><span class="p">,</span>
+    <span class="n">io_completion_cb_t</span> <span class="n">completion_handler</span> <span class="o">=</span> <span class="k">nullptr</span>
+<span class="p">);</span>
+</code></pre></div>
+<h3 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h3>
+<p><em>thandle</em><br/>
+The transport handle to send.</p>
+<p><em>buffer</em><br/>
+The send buffer.</p>
+<p><em>completion_handler</em><br/>
+The completion handler for send operation.</p>
+<h3 id="return-value">Return Value<a class="headerlink" href="#return-value" title="Permanent link">&para;</a></h3>
+<p>A number of bytes to sends, error occured when &lt; 0.</p>
+<h3 id="remarks_5">Remarks<a class="headerlink" href="#remarks_5" title="Permanent link">&para;</a></h3>
+<p>The <em>completion_handler</em> not support KCP.</p>
+<p>The empty buffer will be ignored and not trigger completion_handler.</p>
+<h3 id="example_7">Example<a class="headerlink" href="#example_7" title="Permanent link">&para;</a></h3>
+<p>TODO:</p>
+<h2 id="io_servicewrite_to"><a name="write_to"></a> io_service::write_to<a class="headerlink" href="#io_servicewrite_to" title="Permanent link">&para;</a></h2>
+<p>Sends data asynchronous.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">write_to</span><span class="p">(</span>
+    <span class="n">transport_handle_t</span> <span class="n">thandle</span><span class="p">,</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">buffer</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">ip</span><span class="o">::</span><span class="n">endpoint</span><span class="o">&amp;</span> <span class="n">to</span><span class="p">,</span>
+    <span class="n">io_completion_cb_t</span> <span class="n">completion_handler</span> <span class="o">=</span> <span class="k">nullptr</span>
+<span class="p">);</span>
+</code></pre></div>
+<h3 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h3>
+<p><em>thandle</em><br/>
+The transport handle to send.</p>
+<p><em>buffer</em><br/>
+The send buffer.</p>
+<p><em>to</em><br/>
+The remote endpoint for send operation.</p>
+<p><em>completion_handler</em><br/>
+The completion handler for send operation.</p>
+<h3 id="return-value_1">Return Value<a class="headerlink" href="#return-value_1" title="Permanent link">&para;</a></h3>
+<p>A number of bytes to be send, error occured when &lt; 0.</p>
+<h3 id="remarks_6">Remarks<a class="headerlink" href="#remarks_6" title="Permanent link">&para;</a></h3>
+<p>This function only works for <em>DGRAM</em> transport <code>udp,kcp</code></p>
+<p>The <em>completion_handler</em> not support KCP.</p>
+<p>The empty buffer will be ignored and not trigger completion_handler.</p>
+<h3 id="example_8">Example<a class="headerlink" href="#example_8" title="Permanent link">&para;</a></h3>
+<p>TODO:</p>
+<h2 id="io_serviceschedule"><a name="schedule"></a> io_service::schedule<a class="headerlink" href="#io_serviceschedule" title="Permanent link">&para;</a></h2>
+<p>Schedule a timer which will dispatch on the network service thread.</p>
+<div class="highlight"><pre><span></span><code><span class="n">highp_timer_ptr</span> <span class="nf">schedule</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">microseconds</span><span class="o">&amp;</span> <span class="n">duration</span><span class="p">,</span>
+    <span class="n">timer_cb_t</span> <span class="n">cb</span>
+<span class="p">);</span>
+</code></pre></div>
+<h3 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h3>
+<p><em>duration</em><br/>
+The timer expire duration.</p>
+<p><em>cb</em><br/>
+The callback to execute when the timer is expired.</p>
+<h3 id="return-value_2">Return Value<a class="headerlink" href="#return-value_2" title="Permanent link">&para;</a></h3>
+<p>The shared_ptr of the high resolution timer.</p>
+<h3 id="example_9">Example<a class="headerlink" href="#example_9" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// Register a once timer, timeout is 3 seconds.</span>
+<span class="n">yasio_shared_service</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">schedule</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="p">[]()</span><span class="o">-&gt;</span><span class="kt">bool</span><span class="p">{</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;time called!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">});</span>
+
+<span class="c1">// Register a loop timer, interval is 5 seconds.</span>
+<span class="k">auto</span> <span class="n">loopTimer</span> <span class="o">=</span> <span class="n">yasio_shared_service</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">schedule</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="p">[]()</span><span class="o">-&gt;</span><span class="kt">bool</span><span class="p">{</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;time called!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div>
+<h2 id="io_serviceinit_globals"><a name="init_globals"></a> io_service::init_globals<a class="headerlink" href="#io_serviceinit_globals" title="Permanent link">&para;</a></h2>
+<p>Explicit init global data with print function callback.</p>
+<div class="highlight"><pre><span></span><code><span class="k">static</span> <span class="kt">void</span> <span class="nf">init_globals</span><span class="p">(</span><span class="n">print_fn2_t</span> <span class="n">print_fn</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h3>
+<p><em>print_fn</em><br/>
+The custom print function to print network service log.</p>
+<h3 id="remarks_7">Remarks<a class="headerlink" href="#remarks_7" title="Permanent link">&para;</a></h3>
+<p>This function is optional, it's useful to redirect network service log to your custom log system, such as ue4,u3d, see the example.</p>
+<h3 id="example_10">Example<a class="headerlink" href="#example_10" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// yasio_uelua.cpp</span>
+<span class="c1">// compile with: /EHsc</span>
+<span class="cp">#include</span> <span class="cpf">&quot;yasio_uelua.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;yasio/platform/yasio_ue4.hpp&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;lua.hpp&quot;</span><span class="cp"></span>
+<span class="cp">#if defined(NS_SLUA)</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">NS_SLUA</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="cp">#include</span> <span class="cpf">&quot;yasio/bindings/lyasio.cpp&quot;</span><span class="cp"></span>
+
+<span class="n">DECLARE_LOG_CATEGORY_EXTERN</span><span class="p">(</span><span class="n">yasio_ue4</span><span class="p">,</span> <span class="n">Log</span><span class="p">,</span> <span class="n">All</span><span class="p">);</span>
+<span class="n">DEFINE_LOG_CATEGORY</span><span class="p">(</span><span class="n">yasio_ue4</span><span class="p">);</span>
+
+<span class="kt">void</span> <span class="nf">yasio_uelua_init</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">L</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">auto</span> <span class="n">Ls</span>            <span class="o">=</span> <span class="p">(</span><span class="n">lua_State</span><span class="o">*</span><span class="p">)</span><span class="n">L</span><span class="p">;</span>
+  <span class="n">print_fn2_t</span> <span class="n">log_cb</span> <span class="o">=</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">level</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">msg</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">FString</span> <span class="n">text</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
+    <span class="k">const</span> <span class="n">TCHAR</span><span class="o">*</span> <span class="n">tstr</span> <span class="o">=</span> <span class="o">*</span><span class="n">text</span><span class="p">;</span>
+    <span class="n">UE_LOG</span><span class="p">(</span><span class="n">yasio_ue4</span><span class="p">,</span> <span class="n">Log</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="n">tstr</span><span class="p">);</span>
+  <span class="p">};</span>
+  <span class="n">io_service</span><span class="o">::</span><span class="n">init_globals</span><span class="p">(</span><span class="n">log_cb</span><span class="p">);</span>
+
+  <span class="n">luaregister_yasio</span><span class="p">(</span><span class="n">Ls</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">yasio_uelua_cleanup</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">io_service</span><span class="o">::</span><span class="n">cleanup_globals</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="io_servicecleanup_globals"><a name="cleanup_globals"></a> io_service::cleanup_globals<a class="headerlink" href="#io_servicecleanup_globals" title="Permanent link">&para;</a></h2>
+<p>Clear custom print function object.</p>
+<div class="highlight"><pre><span></span><code><span class="k">static</span> <span class="kt">void</span> <span class="nf">cleanup_globals</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="remarks_8">Remarks<a class="headerlink" href="#remarks_8" title="Permanent link">&para;</a></h3>
+<p>You should call this function before unload a module(.dll,.so) which contains custom print function object.</p>
+<h2 id="io_servicechannel_at"><a name="channel_at"></a> io_service::channel_at<a class="headerlink" href="#io_servicechannel_at" title="Permanent link">&para;</a></h2>
+<p>Retrieves channel by index.</p>
+<div class="highlight"><pre><span></span><code><span class="n">io_channel</span><span class="o">*</span> <span class="nf">channel_at</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">cindex</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h3>
+<p><em>cindex</em><br/>
+The index of channel.</p>
+<h3 id="return-value_3">Return value<a class="headerlink" href="#return-value_3" title="Permanent link">&para;</a></h3>
+<p>The channel pointer, will be <code>nullptr</code> if the index out-of-range.</p>
+<h2 id="io_serviceset_option"><a name="set_option"></a> io_service::set_option<a class="headerlink" href="#io_serviceset_option" title="Permanent link">&para;</a></h2>
+<p>Set current io_service option.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">set_option</span><span class="p">(</span><span class="kt">int</span> <span class="n">opt</span><span class="p">,</span> <span class="p">...);</span>
+</code></pre></div>
+<h3 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h3>
+<p><em>opt</em><br/>
+The opt value, see <a href="../io_service-options/">YOPT_X_XXX</a>.</p>
+<h3 id="example_11">Example<a class="headerlink" href="#example_11" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&quot;yasio/yasio.hpp&quot;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="k">using</span> <span class="k">namespace</span> <span class="nn">yasio</span><span class="p">;</span>
+    <span class="k">using</span> <span class="k">namespace</span> <span class="nn">yasio</span><span class="o">::</span><span class="nn">inet</span><span class="p">;</span>
+    <span class="n">io_hostent</span> <span class="n">hosts</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">{</span><span class="s">&quot;192.168.1.66&quot;</span><span class="p">,</span> <span class="mi">20336</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">&quot;192.168.1.88&quot;</span><span class="p">,</span> <span class="mi">20337</span><span class="p">},</span>
+    <span class="p">};</span>
+    <span class="k">auto</span> <span class="n">service</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">io_service</span><span class="o">&gt;</span><span class="p">(</span><span class="n">hosts</span><span class="p">,</span> <span class="n">YASIO_ARRAYSIZE</span><span class="p">(</span><span class="n">hosts</span><span class="p">));</span>
+
+    <span class="c1">// for application protocol with length field, you just needs set this option.</span>
+    <span class="c1">// it&#39;s similar to java netty length frame based decode.</span>
+    <span class="c1">// such as when your protocol define as following</span>
+    <span class="c1">//    packet.header: (header.len=12bytes)</span>
+    <span class="c1">//           code:int16_t</span>
+    <span class="c1">//           datalen:int32_t (not contains packet.header.len)</span>
+    <span class="c1">//           timestamp:int32_t</span>
+    <span class="c1">//           crc16:int16_t</span>
+    <span class="c1">//    packet.data</span>
+    <span class="n">service</span><span class="o">-&gt;</span><span class="n">set_option</span><span class="p">(</span><span class="n">YOPT_C_LFBFD_PARAMS</span><span class="p">,</span>
+                        <span class="mi">0</span><span class="p">,</span>     <span class="c1">// channelIndex, the channel index</span>
+                        <span class="mi">65535</span><span class="p">,</span> <span class="c1">// maxFrameLength, max packet size</span>
+                        <span class="mi">2</span><span class="p">,</span>     <span class="c1">// lenghtFieldOffset, the offset of length field</span>
+                        <span class="mi">4</span><span class="p">,</span>     <span class="c1">// lengthFieldLength, the size of length field, can be 1,2,4</span>
+                        <span class="mi">12</span><span class="p">,</span>    <span class="c1">// lengthAdjustment：if the value of length feild == packet.header.len + packet.data.len, this parameter should be 0, otherwise should be sizeof(packet.header)</span>
+    <span class="p">);</span>
+
+    <span class="c1">// for application protocol without length field, just sets length field size to -1.</span>
+    <span class="c1">// then io_service will dispatch any packet received from server immediately,</span>
+    <span class="c1">// such as http request, this is default behavior of channel.</span>
+    <span class="n">service</span><span class="o">-&gt;</span><span class="n">set_option</span><span class="p">(</span><span class="n">YOPT_C_LFBFD_PARAMS</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">65535</span><span class="p">,</span> <span class="mi">-1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<p><a href="../io_event-class/">io_event Class</a></p>
+<p><a href="../io_channel-class/">io_channel Class</a></p>
+<p><a href="../io_service-options/">io_service Options</a></p>
+<p><a href="../xxsocket-class/">xxsocket Class</a></p>
+<p><a href="../obstream-class/">obstream Class</a></p>
+<p><a href="../ibstream-class/">ibstream_view Class</a></p>
+<p><a href="../ibstream-class/#ibstream-class">ibstream Class</a></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../../.." class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Home
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../io_channel-class/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              io_channel Class
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2012 - 2021 yasio.org.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+    
+  </body>
+</html>

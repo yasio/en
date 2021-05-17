@@ -2,9 +2,8 @@
 
 This is the yasio official English documentation sources repo, build with [mkdocs](https://www.mkdocs.org/)
 
-* site: https://yasio.org/en/latest
-* mirror site: http://docs.simdsoft.com:3003/yasio/en
-
+* site: https://yasio.github.io/en/
+* 
 ## Install mkdocs with mkdocs-material
 - Install python3+
 - pip install mkdocs-material

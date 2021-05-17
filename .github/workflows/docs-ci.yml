@@ -32,7 +32,8 @@ jobs:
           git config user.name "docs-bot"
           git config user.email "docs-bot@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git fetch
+          git fetch --unshallow --tags
+          git tag --list
           mike delete --all
           git checkout v3.37.1
           mike deploy 3.37.1 stable -t=stable

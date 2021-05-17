@@ -31,13 +31,13 @@ This demo simply send http request to ``tool.chinaz.com`` and print resposne dat
         service.start([&](event_ptr&& ev) {
             switch (ev->kind())
             {
-            case YEK_PACKET: {
+            case YEK_ON_PACKET: {
                 auto packet = std::move(ev->packet());
                 fwrite(packet.data(), packet.size(), 1, stdout);
                 fflush(stdout);
                 break;
             }
-            case YEK_CONNECT_RESPONSE:
+            case YEK_ON_OPEN:
                 if (ev->status() == 0)
                 {
                 auto transport = ev->transport();
@@ -58,7 +58,7 @@ This demo simply send http request to ``tool.chinaz.com`` and print resposne dat
                 }
                 }
                 break;
-            case YEK_CONNECTION_LOST:
+            case YEK_ON_CLOSE:
                 printf("The connection is lost.\n");
                 break;
             }
@@ -77,9 +77,9 @@ This demo simply send http request to ``tool.chinaz.com`` and print resposne dat
     local respdata = ""
     service:start(function(ev)
             local k = ev.kind()
-            if (k == yasio.YEK_PACKET) then
+            if (k == yasio.YEK_ON_PACKET) then
                 respdata = respdata .. ev:packet():to_string()
-            elseif k == yasio.YEK_CONNECT_RESPONSE then
+            elseif k == yasio.YEK_ON_OPEN then
                 if ev:status() == 0 then -- connect succeed
                     local transport = ev:transport()
                     local obs = yasio.obstream.new()
@@ -93,7 +93,7 @@ This demo simply send http request to ``tool.chinaz.com`` and print resposne dat
 
                     service:write(transport, obs)
                 end
-            elseif k == yasio.YEK_CONNECTION_LOST then
+            elseif k == yasio.YEK_ON_CLOSE then
                 print("request finish, respdata: " ..  respdata)
             end
         end)

@@ -1,13 +1,9 @@
 # yasio Documentation
 
-[![Release](https://img.shields.io/badge/release-v3.37.1-blue.svg)](https://github.com/yasio/yasio/releases)
 [![Docs Status](https://github.com/yasio/en/workflows/docs/badge.svg)](https://github.com/yasio/en/actions?query=workflow%3Adocs)
 
 *yasio is a multi-platform support c++11 library with focus on asio (asynchronous socket I/O) for any client application.*
 
-- Languages:
-    - [English](../../en/latest/)
-    - [简体中文](../../zh_CN/latest/)
 - Cross-platform:
     - Compiler: 
         - Visual Studio 2013+

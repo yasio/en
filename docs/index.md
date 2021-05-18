@@ -14,6 +14,8 @@
     - Architecture: x86, x64, ARM and etc.
     - OS: Windows, macOS, Linux, FreeBSD, iOS, Android And etc.
 
+- Open source location: 中国@深圳
+
 ## Quick Start
 This demo simply send http request to ``tool.chinaz.com`` and print resposne data.
 

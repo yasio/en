@@ -68,6 +68,8 @@ plugins:
       enabled_if_env: DOCS_CI
   - minify:
       minify_html: true
+extra_css:
+  - 'assets/stylesheets/extra.css'
 extra:
   alternate:
     # Switch to Chinese Simplfied

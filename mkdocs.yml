@@ -60,6 +60,14 @@ plugins:
         - en
         - ja
       separator: '[\s\-\，\。]+'
+  - pdf-export:
+      verbose: false
+      media_type: print
+      combined: true
+      combined_output_path: pdf/yasio-latest.pdf
+      enabled_if_env: DOCS_CI
+  - minify:
+      minify_html: true
 extra:
   alternate:
     # Switch to Chinese Simplfied

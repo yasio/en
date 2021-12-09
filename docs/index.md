@@ -9,7 +9,7 @@
         - Visual Studio 2013+
         - GCC4.7+
         - xcode9+
-        - Other C++11,14,17 Compilers
+        - Other Compilers which support C++11+
 
     - Architecture: x86, x64, ARM and etc.
     - OS: Windows, macOS, Linux, FreeBSD, iOS, Android And etc.
